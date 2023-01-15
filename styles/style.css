@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+}
+
+label {
+  display: block;
+  text-transform: uppercase;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.background-image {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 27%;
+}
+
+/* Card section */
+.card-section {
+  margin: 150px 0 0 9%;
+  position: absolute;
+}
+
+.card__front {
+  background-image: url(/images/bg-card-front.png);
+  background-repeat: no-repeat;
+  height: 245px;
+  width: 447px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 55px 0px rgba(0, 0, 0, 0.5);
+}
+
+.card__back {
+  background-image: url(/images/bg-card-back.png);
+  background-repeat: no-repeat;
+  height: 245px;
+  width: 447px;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-left: 100px;
+  box-shadow: 0px 5px 55px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Inpur section */
+.input-section {
+  color: black;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 20%;
+}

@@ -4,10 +4,72 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Card form</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png" />
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
+    <img
+      src="images/bg-main-desktop.png"
+      alt="background"
+      class="background-image"
+    />
+    <div class="card-section">
+      <div class="card__front"></div>
+      <div class="card__back"></div>
+    </div>
+    <div class="input-section">
+      <form>
+        <div class="input__name">
+          <label for="name" class="input__title">Cardholder name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="e.g. Jane Appleseed"
+            class="name-section"
+            required
+          />
+        </div>
+        <div class="input__number">
+          <label for="number" class="input__title">Card number</label>
+          <input
+            type="number"
+            maxlength="19"
+            class="number-section"
+            placeholder="e.g. 1234 5678 9123 0000"
+            required
+          />
+        </div>
+        <div class="input__date">
+          <label for="date" class="input__title">exp. date (mm/yy)</label>
+          <input
+            type="number"
+            maxlength="2"
+            class="date-section"
+            placeholder="MM"
+            required
+          />
+          <input
+            type="number"
+            maxlength="2"
+            class="date-section"
+            placeholder="YY"
+            required
+          />
+          <label for="cvc" class="input__title">cvc</label>
+          <input
+            type="number"
+            maxlength="3"
+            class="cvc-section"
+            placeholder="e.g. 123"
+            required
+          />
+        </div>
+        <div class="input__button">
+          <input type="submit" value="Confirm" class="btn" />
+        </div>
+      </form>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>

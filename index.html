@@ -39,6 +39,9 @@
             class="long-input"
             required
           />
+          <p class="input__error error-inactive">
+            Wrong format, please fill in the field
+          </p>
         </div>
 
         <div class="input__number">
@@ -50,6 +53,9 @@
             placeholder="e.g. 1234 5678 9123 0000"
             required
           />
+          <p class="input__error error-inactive">
+            Wrong format, please fill in the field
+          </p>
         </div>
 
         <div class="input__date">
@@ -79,6 +85,10 @@
             placeholder="e.g. 123"
             required
           />
+          <div class="error__bottom">
+            <span class="input__error error-inactive">Can't be blank</span>
+            <span class="input__error error-inactive">Can't be blank</span>
+          </div>
         </div>
         <input type="submit" value="Confirm" class="btn" />
       </form>

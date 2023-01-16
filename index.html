@@ -26,37 +26,42 @@
             type="text"
             name="name"
             placeholder="e.g. Jane Appleseed"
-            class="name-section"
+            class="long-input"
             required
           />
         </div>
+
         <div class="input__number">
           <label for="number" class="input__title">Card number</label>
           <input
             type="number"
             maxlength="19"
-            class="number-section"
+            class="long-input"
             placeholder="e.g. 1234 5678 9123 0000"
             required
           />
         </div>
+
         <div class="input__date">
-          <label for="date" class="input__title">exp. date (mm/yy)</label>
+          <div class="date-title">
+            <label for="date" class="input__title">exp. date (mm/yy)</label>
+            <label for="cvc" class="input__title">cvc</label>
+          </div>
           <input
             type="number"
             maxlength="2"
-            class="date-section"
+            class="short-input"
             placeholder="MM"
             required
           />
           <input
             type="number"
             maxlength="2"
-            class="date-section"
+            class="short-input"
             placeholder="YY"
             required
           />
-          <label for="cvc" class="input__title">cvc</label>
+
           <input
             type="number"
             maxlength="3"
@@ -65,9 +70,7 @@
             required
           />
         </div>
-        <div class="input__button">
-          <input type="submit" value="Confirm" class="btn" />
-        </div>
+        <input type="submit" value="Confirm" class="btn" />
       </form>
     </div>
     <script src="index.js"></script>

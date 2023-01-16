@@ -52,6 +52,31 @@ input {
   width: 447px;
   border-radius: 10px;
   box-shadow: 0px 5px 55px 0px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.front-logo {
+  padding-left: 25px;
+  padding-top: 25px;
+}
+
+.front-number {
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  letter-spacing: 0.2rem;
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+
+.front-name {
+  padding-left: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.front-date {
+  padding-left: 180px;
 }
 
 .card__back {
@@ -65,13 +90,22 @@ input {
   box-shadow: 0px 5px 55px 0px rgba(0, 0, 0, 0.5);
 }
 
+.back-cvc {
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 50px;
+  padding-top: 110px;
+  letter-spacing: 0.2rem;
+}
+
 /* Inpur section */
 .input-section {
   color: black;
   display: flex;
   flex-direction: row-reverse;
-  margin-right: 25%;
-  padding-top: 200px;
+  margin-right: 30%;
+  padding-top: 220px;
 }
 
 .input__title {
@@ -94,6 +128,7 @@ input {
   border: 1px solid lightgray;
   width: 30px;
   margin-right: 5px;
+  font-size: 18px;
 }
 
 .date-title {
@@ -109,7 +144,7 @@ input {
   width: 155px;
   border-radius: 10px;
   border: 1px solid lightgray;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .btn {

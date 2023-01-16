@@ -32,11 +32,20 @@ input {
   cursor: pointer;
 }
 
-.background-image {
+.background__image {
+  display: block;
   position: absolute;
   z-index: -1;
   height: 100%;
   width: 27%;
+}
+
+.background__image-mobile {
+  display: none;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 40%;
 }
 
 /* Card section */
@@ -154,4 +163,166 @@ input {
   background-color: hsl(278, 68%, 11%);
   color: white;
   font-size: 16px;
+}
+
+.btn:hover {
+  background-color: hsl(278, 70%, 24%);
+  transition: all 0.2s ease-in;
+}
+
+/* Adaptive */
+@media (max-width: 1600px) {
+  .input-section {
+    margin-right: 20%;
+  }
+
+  .card-section {
+    margin-left: 5%;
+  }
+}
+
+@media (max-width: 1350px) {
+  .input-section {
+    margin-right: 10%;
+  }
+}
+
+@media (max-width: 1150px) {
+  .background__image {
+    display: none;
+  }
+
+  .background__image-mobile {
+    display: block;
+  }
+
+  .input-section {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .form {
+    width: 355px;
+    margin: 260px auto 0;
+  }
+
+  .card-section {
+    margin: 0;
+  }
+
+  .card__back {
+    margin-top: 40px;
+    margin-left: 40vw;
+  }
+
+  .card__front {
+    position: absolute;
+    z-index: 2;
+    top: 175px;
+    left: 20vw;
+  }
+}
+
+@media (max-width: 850px) {
+  .card__back {
+    margin-left: 25vw;
+  }
+
+  .card__front {
+    position: absolute;
+    z-index: 2;
+    top: 175px;
+    left: 10vw;
+  }
+}
+
+@media (max-width: 650px) {
+  .background__image-mobile {
+    height: 30%;
+  }
+
+  .form {
+    width: 280px;
+    margin: 160px auto 0;
+  }
+
+  .long-input {
+    padding: 8px 36px 8px 10px;
+  }
+
+  .short-input {
+    padding: 10px 20px 10px 10px;
+  }
+
+  .cvc-section {
+    width: 100px;
+  }
+
+  .btn {
+    padding: 10px 108px;
+  }
+
+  .card__front {
+    background-image: url(/images/bg-card-front-mobile.png);
+    width: 280px;
+    height: 153px;
+    top: 150px;
+    left: 15vw;
+  }
+
+  .front-logo {
+    width: 48px;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+
+  .front-number {
+    font-size: 16px;
+    padding-top: 35px;
+  }
+
+  .front-name {
+    padding-left: 20px;
+    font-size: 12px;
+  }
+
+  .front-date {
+    padding-left: 70px;
+  }
+
+  .card__back {
+    background-image: url(/images/bg-card-back-mobile.png);
+    width: 280px;
+    height: 153px;
+    margin-left: 35vw;
+  }
+
+  .back-cvc {
+    padding-right: 30px;
+    padding-top: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .background__image-mobile {
+    height: 25%;
+  }
+
+  .card__back {
+    margin-left: 16vw;
+  }
+
+  .card__front {
+    left: 10vw;
+  }
+}
+
+@media (max-width: 350px) {
+  .card__back {
+    margin-left: 10vw;
+  }
+
+  .card__front {
+    left: 7vw;
+  }
 }

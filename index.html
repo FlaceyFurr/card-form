@@ -44,6 +44,9 @@
             placeholder="e.g. Jane Appleseed"
             class="long-input"
             required
+            maxlength="30"
+            onkeypress="validateName(event)
+            "
           />
           <p class="input__error" id="errorName"></p>
         </div>

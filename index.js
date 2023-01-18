@@ -12,7 +12,7 @@ const validateForm = (e) => {
   const errorDate = document.getElementById("errorDate");
   const errorCvc = document.getElementById("errorCvc");
 
-  if (name.length < 5 || name.length > 20) {
+  if (name.length < 5 || name.length > 25) {
     errorName.innerText = "Wrong format, please fill in the field";
   } else {
     errorName.innerText = "";
@@ -40,13 +40,9 @@ const validateForm = (e) => {
 };
 
 /* Validate name card */
-document.getElementById("name").addEventListener("input", function () {
-  let name = document.getElementById("name");
-  let pattern = /^\s*[0-9А-Яа-я!@#$%^&*().,//\\`~"'\[\]|><{}№;%:?\-_=+ ]+$/m;
-
-  name.addEventListener("input", function (e) {
-    name.value = name.value.replace(pattern, "").toUpperCase();
-  });
-});
+function validateName(event) {
+  const regular = `"1234567890!@#$%^&*().,/\\\`~"[]|><{}№;:?\_=+"`;
+  if (regular.indexOf(event.key) != -1) event.preventDefault();
+}
 
 function changeForm() {}

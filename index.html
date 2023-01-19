@@ -33,7 +33,7 @@
         <span class="back-cvc" id="cvcResult">000</span>
       </div>
     </div>
-    <div class="input-section">
+    <div class="input-section active">
       <form
         action="/"
         method="GET"
@@ -107,6 +107,12 @@
           onclick="changeForm()"
         />
       </form>
+    </div>
+    <div class="success-section inactive">
+      <img src="images/icon-complete.svg" alt="success" class="success__img" />
+      <h2 class="success__title">Thank you!</h2>
+      <p class="success__subtitle">We've added your card details</p>
+      <button class="btn" onclick="returnForm()">Continue</button>
     </div>
     <script src="index.js"></script>
   </body>

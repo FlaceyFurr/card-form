@@ -130,8 +130,19 @@ document.getElementById("cvc").addEventListener("input", () => {
   }
 });
 
+
 function changeForm() {
   if (validateForm(event) === true) {
-    alert("Success");
+    document.querySelector(".input-section").classList.remove("active");
+    document.querySelector(".input-section").classList.add("inactive");
+    document.querySelector(".success-section").classList.remove("inactive");
+    document.querySelector(".success-section").classList.add("active");
   }
+}
+
+function returnForm() {
+  document.querySelector(".input-section").classList.remove("inactive");
+  document.querySelector(".input-section").classList.add("active");
+  document.querySelector(".success-section").classList.remove("active");
+  document.querySelector(".success-section").classList.add("inactive");
 }

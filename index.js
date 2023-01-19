@@ -18,7 +18,7 @@ const validateForm = (e) => {
     errorName.innerText = "";
   }
 
-  if (number.length < 16) {
+  if (number.length < 19) {
     errorNumber.innerText = "Wrong format, please fiil in the field";
   } else {
     errorNumber.innerText = "";
@@ -35,14 +35,37 @@ const validateForm = (e) => {
   } else {
     errorCvc.innerText = "";
   }
-
-  return true;
 };
 
 /* Validate name card */
 function validateName(event) {
   const regular = `"1234567890!@#$%^&*().,/\\\`~"[]|><{}№;:?\_=+"`;
   if (regular.indexOf(event.key) != -1) event.preventDefault();
+}
+
+/* Validate number card */
+function validateNumber() {
+  const number = document.querySelector("#number");
+  const numbers = /[0-9]/;
+  const regNumbers = /[0-9]{4}/;
+
+  number.addEventListener("input", (e) => {
+    if (e.inputType === "insertText" && !numbers.test(e.data)) {
+      number.value = number.value.slice(0, number.value.length - 1);
+    }
+
+    const value = number.value;
+    if (
+      e.inputType === "deleteContentBackward" &&
+      regNumbers.test(value.slice(-4))
+    ) {
+      number.value = number.value.slice(0, number.value.length - 1);
+    }
+
+    if (regNumbers.test(value.slice(-4)) && value.length < 19) {
+      number.value += " ";
+    }
+  });
 }
 
 function changeForm() {}

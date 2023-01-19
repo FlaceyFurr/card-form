@@ -43,7 +43,6 @@
             id="name"
             placeholder="e.g. Jane Appleseed"
             class="long-input"
-            required
             maxlength="30"
             onkeypress="validateName(event)
             "
@@ -54,12 +53,12 @@
         <div class="input__number">
           <label for="number" class="input__title">Card number</label>
           <input
-            type="number"
+            type="text"
             id="number"
             class="long-input"
-            onkeypress="this.value=this.value.substring(0,15);"
+            maxlength="19"
+            onkeypress="validateNumber()"
             placeholder="e.g. 1234 5678 9123 0000"
-            required
           />
           <p class="input__error" id="errorNumber"></p>
         </div>
@@ -75,7 +74,6 @@
             onkeypress="this.value=this.value.substring(0,1);"
             class="short-input"
             placeholder="MM"
-            required
           />
           <input
             type="number"
@@ -83,7 +81,6 @@
             onkeypress="this.value=this.value.substring(0,1);"
             class="short-input"
             placeholder="YY"
-            required
           />
 
           <input
@@ -92,7 +89,6 @@
             onkeypress="this.value=this.value.substring(0,2);"
             class="cvc-section"
             placeholder="e.g. 123"
-            required
           />
           <div class="error__bottom">
             <span class="input__error" id="errorDate"></span>
@@ -107,6 +103,7 @@
         />
       </form>
     </div>
+    <div class="success-section">Testing</div>
     <script src="index.js"></script>
   </body>
 </html>

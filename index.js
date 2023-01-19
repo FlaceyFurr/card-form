@@ -14,27 +14,33 @@ const validateForm = (e) => {
 
   if (nameValue.length < 5 || nameValue.length > 25) {
     errorName.innerText = "Wrong format, please fill in the field";
+    return false;
   } else {
     errorName.innerText = "";
   }
 
   if (numberValue.length < 19) {
     errorNumber.innerText = "Wrong format, please fiil in the field";
+    return false;
   } else {
     errorNumber.innerText = "";
   }
 
   if (monthValue.length < 2 || yearValue.length < 2) {
     errorDate.innerText = "Can't be blank";
+    return false;
   } else {
     errorDate.innerText = "";
   }
 
   if (cvcValue.length < 3) {
     errorCvc.innerText = "Can't be blank";
+    return false;
   } else {
     errorCvc.innerText = "";
   }
+
+  return true;
 };
 
 /* Validate name card */
@@ -123,3 +129,9 @@ document.getElementById("cvc").addEventListener("input", () => {
     cvcResult.innerText = event.target.value;
   }
 });
+
+function changeForm() {
+  if (validateForm(event) === true) {
+    alert("Success");
+  }
+}

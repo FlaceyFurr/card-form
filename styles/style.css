@@ -85,7 +85,7 @@ input {
 }
 
 .front-date {
-  padding-left: 180px;
+  padding-left: 250px;
 }
 
 .card__back {
@@ -312,7 +312,7 @@ input {
   }
 
   .front-date {
-    padding-left: 70px;
+    padding-left: 150px;
   }
 
   .card__back {

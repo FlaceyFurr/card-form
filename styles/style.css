@@ -58,7 +58,7 @@ input {
 
 /* Card section */
 .card-section {
-  margin: 100px 0 0 9%;
+  margin: 150px 0 0 9%;
   position: absolute;
 }
 
@@ -230,7 +230,7 @@ input {
   margin-bottom: 30px;
 }
 
-/* Adaptive */
+/* Adaptive width */
 @media (max-width: 1600px) {
   .success-section {
     margin-left: 60%;
@@ -411,5 +411,54 @@ input {
 
   .card__front {
     left: 3vw;
+  }
+}
+
+/* Adaptive height */
+@media (max-height: 750px) {
+  .card-section {
+    margin: 20px 0 0 5%;
+  }
+
+  .card__back {
+    margin-top: 25px;
+  }
+
+  .input-section {
+    padding-top: 100px;
+  }
+}
+
+@media (max-height: 750px) and (max-width: 1150px) {
+  .input-section {
+    padding-top: 250px;
+  }
+
+  .card__back {
+    margin-left: 30vw;
+  }
+
+  .card__front {
+    left: 15vw;
+  }
+}
+
+@media (max-height: 750px) and (max-width: 850px) {
+  .card__back {
+    margin-left: 20vw;
+  }
+
+  .card__front {
+    left: 5vw;
+  }
+}
+
+@media (max-height: 750px) and (max-width: 650px) {
+  .card__back {
+    margin-left: 25vw;
+  }
+
+  .card__front {
+    left: 10vw;
   }
 }

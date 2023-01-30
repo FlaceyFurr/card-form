@@ -30,6 +30,7 @@ input[type="number"] {
 
 input {
   cursor: pointer;
+  outline: none;
 }
 
 .background__image {

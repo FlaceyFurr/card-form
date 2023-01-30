@@ -1,6 +1,15 @@
 /* Validate form */
 const validateForm = (e) => {
   e.preventDefault();
+
+  let checkError = true;
+
+  const name = document.querySelector("#cardName");
+  const number = document.querySelector("#number");
+  const month = document.querySelector("#month");
+  const year = document.querySelector("#year");
+  const cvc = document.querySelector("#cvc");
+
   const nameValue = document.querySelector("#cardName").value;
   const numberValue = document.querySelector("#number").value;
   const monthValue = document.querySelector("#month").value;
@@ -14,33 +23,50 @@ const validateForm = (e) => {
 
   if (nameValue.length < 5 || nameValue.length > 25) {
     errorName.innerText = "Wrong format, please fill in the field";
-    return false;
+    name.style.borderColor = "red";
+    checkError = false;
   } else {
     errorName.innerText = "";
+    name.style.borderColor = null;
   }
 
   if (numberValue.length < 19) {
     errorNumber.innerText = "Wrong format, please fiil in the field";
-    return false;
+    number.style.borderColor = "red";
+    checkError = false;
   } else {
     errorNumber.innerText = "";
+    number.style.borderColor = null;
   }
 
-  if (monthValue.length < 2 || yearValue.length < 2) {
+  if (monthValue.length < 2) {
     errorDate.innerText = "Can't be blank";
-    return false;
+    month.style.borderColor = "red";
+    checkError = false;
   } else {
     errorDate.innerText = "";
+    month.style.borderColor = null;
+  }
+
+  if (yearValue.length < 2) {
+    errorDate.innerText = "Can't be blank";
+    year.style.borderColor = "red";
+    checkError = false;
+  } else {
+    errorDate.innerText = "";
+    year.style.borderColor = null;
   }
 
   if (cvcValue.length < 3) {
     errorCvc.innerText = "Can't be blank";
-    return false;
+    cvc.style.borderColor = "red";
+    checkError = false;
   } else {
     errorCvc.innerText = "";
+    cvc.style.borderColor = null;
   }
 
-  return true;
+  return checkError;
 };
 
 /* Validate name card */
@@ -129,7 +155,6 @@ document.getElementById("cvc").addEventListener("input", () => {
     cvcResult.innerText = event.target.value;
   }
 });
-
 
 function changeForm() {
   if (validateForm(event) === true) {

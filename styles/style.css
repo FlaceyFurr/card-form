@@ -418,7 +418,7 @@ input {
 /* Adaptive height */
 @media (max-height: 750px) {
   .card-section {
-    margin: 20px 0 0 5%;
+    margin: 100px 0 0 5%;
   }
 
   .card__back {
@@ -426,11 +426,15 @@ input {
   }
 
   .input-section {
-    padding-top: 100px;
+    padding-top: 130px;
   }
 }
 
 @media (max-height: 750px) and (max-width: 1150px) {
+  .card-section {
+    margin: 20px 0 0 5%;
+  }
+  
   .input-section {
     padding-top: 250px;
   }
@@ -461,5 +465,25 @@ input {
 
   .card__front {
     left: 10vw;
+  }
+}
+
+@media (max-height: 750px) and (max-width: 480px) {
+  .card__back {
+    margin-left: 10vw;
+  }
+
+  .card__front {
+    left: 2vw;
+  }
+}
+
+@media (max-height: 750px) and (max-width: 480px) {
+  .card__back {
+    margin-left: 0;
+  }
+
+  .card__front {
+    left: 0;
   }
 }

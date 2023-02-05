@@ -351,7 +351,7 @@ input {
   }
 
   .card__front {
-    background-image: url(/images/bg-card-front-mobile.png);
+    background-image: url(./../images/bg-card-front-mobile.png);
     width: 280px;
     height: 153px;
     top: 150px;
@@ -379,7 +379,7 @@ input {
   }
 
   .card__back {
-    background-image: url(/images/bg-card-back-mobile.png);
+    background-image: url(./../images/bg-card-back-mobile.png);
     width: 280px;
     height: 153px;
     margin-left: 35vw;

@@ -1,119 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Card form</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png" />
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
-  <body>
-    <img
-      src="./images/bg-main-desktop.png"
-      alt="background"
-      class="background__image"
-    />
-    <img
-      src="./images/bg-main-mobile.png"
-      alt="background mobile"
-      class="background__image-mobile"
-    />
-    <div class="card-section">
-      <div class="card__front">
-        <img src="./images/card-logo.svg" alt="card logo" class="front-logo" />
-        <span class="front-date" id="monthResult">00</span>/<span
-          id="yearResult"
-          >00</span
-        >
-        <span class="front-number" id="numberResult">0000 0000 0000 0000</span>
-        <span class="front-name" id="nameResult">jane appleseed</span>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card form</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <img src="./images/bg-main-desktop.png" alt="background" class="background__image">
+  <img src="./images/bg-main-mobile.png" alt="background mobile" class="background__image-mobile">
+  <div class="card-section">
+    <div class="card__front">
+      <img src="./images/card-logo.svg" alt="card logo" class="front-logo">
+      <span class="front-date" id="monthResult">00</span>/<span id="yearResult">00</span>
+      <span class="front-number" id="numberResult">0000 0000 0000 0000</span>
+      <span class="front-name" id="nameResult">jane appleseed</span>
+    </div>
+    <div class="card__back">
+      <span class="back-cvc" id="cvcResult">000</span>
+    </div>
+  </div>
+  <div class="input-section active">
+    <form action="/" method="GET" class="form" novalidate onsubmit="validateForm(event)">
+      <div class="input__name">
+        <label for="cardName" class="input__title">Cardholder name</label>
+        <input type="text" id="cardName" placeholder="e.g. Jane Appleseed" class="long-input" maxlength="30"
+          onkeypress="validateName(event)">
+        <p class="input__error" id="errorName"></p>
       </div>
-      <div class="card__back">
-        <span class="back-cvc" id="cvcResult">000</span>
+
+      <div class="input__number">
+        <label for="number" class="input__title">Card number</label>
+        <input type="text" id="number" class="long-input" maxlength="19" onkeypress="validateNumber()"
+          placeholder="e.g. 1234 5678 9123 0000">
+        <p class="input__error" id="errorNumber"></p>
       </div>
-    </div>
-    <div class="input-section active">
-      <form
-        action="/"
-        method="GET"
-        class="form"
-        novalidate
-        onsubmit="validateForm(event)"
-      >
-        <div class="input__name">
-          <label for="name" class="input__title">Cardholder name</label>
-          <input
-            type="text"
-            id="cardName"
-            placeholder="e.g. Jane Appleseed"
-            class="long-input"
-            maxlength="30"
-            onkeypress="validateName(event)
-            "
-          />
-          <p class="input__error" id="errorName"></p>
-        </div>
 
-        <div class="input__number">
-          <label for="number" class="input__title">Card number</label>
-          <input
-            type="text"
-            id="number"
-            class="long-input"
-            maxlength="19"
-            onkeypress="validateNumber()"
-            placeholder="e.g. 1234 5678 9123 0000"
-          />
-          <p class="input__error" id="errorNumber"></p>
+      <div class="input__date">
+        <div class="date-title">
+          <label class="input__title">exp. date (mm/yy)</label>
+          <label for="cvc" class="input__title">cvc</label>
         </div>
+        <input type="number" id="month" onkeypress="this.value=this.value.substring(0,1);" class="short-input"
+          placeholder="MM">
+        <input type="number" id="year" onkeypress="this.value=this.value.substring(0,1);" class="short-input"
+          placeholder="YY">
 
-        <div class="input__date">
-          <div class="date-title">
-            <label for="date" class="input__title">exp. date (mm/yy)</label>
-            <label for="cvc" class="input__title">cvc</label>
-          </div>
-          <input
-            type="number"
-            id="month"
-            onkeypress="this.value=this.value.substring(0,1);"
-            class="short-input"
-            placeholder="MM"
-          />
-          <input
-            type="number"
-            id="year"
-            onkeypress="this.value=this.value.substring(0,1);"
-            class="short-input"
-            placeholder="YY"
-          />
-
-          <input
-            type="number"
-            id="cvc"
-            onkeypress="this.value=this.value.substring(0,2);"
-            class="cvc-section"
-            placeholder="e.g. 123"
-          />
-          <div class="error__bottom">
-            <span class="input__error" id="errorDate"></span>
-            <span class="input__error" id="errorCvc"></span>
-          </div>
+        <input type="number" id="cvc" onkeypress="this.value=this.value.substring(0,2);" class="cvc-section"
+          placeholder="e.g. 123">
+        <div class="error__bottom">
+          <span class="input__error" id="errorDate"></span>
+          <span class="input__error" id="errorCvc"></span>
         </div>
-        <input
-          type="submit"
-          value="Confirm"
-          class="btn"
-          onclick="changeForm()"
-        />
-      </form>
-    </div>
-    <div class="success-section inactive">
-      <img src="./images/icon-complete.svg" alt="success" class="success__img" />
-      <h2 class="success__title">Thank you!</h2>
-      <p class="success__subtitle">We've added your card details</p>
-      <button class="btn" onclick="returnForm()">Continue</button>
-    </div>
-    <script src="index.js"></script>
-  </body>
+      </div>
+      <input type="submit" value="Confirm" class="btn" onclick="changeForm()">
+    </form>
+  </div>
+  <div class="success-section inactive">
+    <img src="./images/icon-complete.svg" alt="success" class="success__img">
+    <h2 class="success__title">Thank you!</h2>
+    <p class="success__subtitle">We've added your card details</p>
+    <button class="btn" onclick="returnForm()">Continue</button>
+  </div>
+  <script src="index.js"></script>
+</body>
+
 </html>

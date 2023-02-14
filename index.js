@@ -39,7 +39,7 @@ const validateForm = (e) => {
     number.style.borderColor = null;
   }
 
-  if (monthValue.length < 2) {
+  if (monthValue.length < 2 || monthValue > 12) {
     errorDate.innerText = "Can't be blank";
     month.style.borderColor = "red";
     checkError = false;
